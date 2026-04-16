@@ -1117,16 +1117,11 @@
 <!-- TAB NAV -->
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="showTab('overview', this)">01 · Overview</button>
-  <button class="tab-btn" onclick="showTab('simulation', this)">02 · Simulation</button>
-  <button class="tab-btn" onclick="showTab('release', this)">03 · Release Strategy</button>
-  <button class="tab-btn" onclick="showTab('buyer', this)">04 · Buyer Intelligence</button>
-  <button class="tab-btn" onclick="showTab('positioning', this)">05 · Market Positioning</button>
-  <button class="tab-btn" onclick="showTab('scenarios', this)">06 · Scenarios</button>
-  <button class="tab-btn" onclick="showTab('objections', this)">07 · Objections</button>
-  <button class="tab-btn" onclick="showTab('incentives', this)">08 · Gov Incentives</button>
-  <button class="tab-btn" onclick="showTab('risks', this)">09 · Risk Register</button>
-  <button class="tab-btn" onclick="showTab('validation', this)">10 · Validation</button>
-  <button class="tab-btn" onclick="showTab('transcripts', this)">11 · Buyer Transcripts</button>
+  <button class="tab-btn" onclick="showTab('simulation', this)">02 · Simulation & Validation</button>
+  <button class="tab-btn" onclick="showTab('release', this)">03 · Release & Scenarios</button>
+  <button class="tab-btn" onclick="showTab('buyer', this)">04 · Buyers & Objections</button>
+  <button class="tab-btn" onclick="showTab('positioning', this)">05 · Market Position</button>
+  <button class="tab-btn" onclick="showTab('transcripts', this)">06 · Buyer Transcripts</button>
 </nav>
 
 <!-- ============================= TAB 1: OVERVIEW ============================= -->
@@ -1314,7 +1309,7 @@
         <div class="stat-item"><div class="s-n" style="color:var(--navy)">1.1mo</div><div class="s-l">MAE</div></div>
         <div class="stat-item"><div class="s-n" style="color:var(--green)">62.5%</div><div class="s-l">Within 1 month</div></div>
       </div>
-      <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px">Training data: 41 Terralytics comparable sales · Apr 2026</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px">Training data: 41 ProjX Research comparable sales · Apr 2026</div>
       <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:10px">Feature Importances</div>
       <div class="chart-wrap" style="height:220px">
         <canvas id="featureChart"></canvas>
@@ -1428,6 +1423,25 @@
         74.7% of agents raised price/affordability — primary sales training priority
       </div>
     </div>
+  </div>
+
+  <!-- BACKTESTING (from Validation) -->
+  <div class="section-title">Model Validation — Backtesting Against Completed Projects</div>
+  <div class="callout green mb-20">
+    <div class="callout-title">90% Average Accuracy</div>
+    <p>Our model was retrospectively tested against 4 completed SEQ projects with a mean deviation of ±1.4 months. All predictions fell within ±2 months of actual sell-out timelines.</p>
+  </div>
+  <div class="table-wrap mb-28">
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%"><table class="data-table">
+      <thead><tr><th>Project</th><th>Predicted</th><th>Actual</th><th>Variance</th><th>Accuracy</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Providence Stage 14</strong></td><td>9 months</td><td>8 months</td><td style="color:var(--green);font-weight:700">+1.0 mo</td><td><span class="pill pill-green">89%</span></td></tr>
+        <tr><td><strong>Providence Stage 15</strong></td><td>7 months</td><td>7.5 months</td><td style="color:var(--green);font-weight:700">−0.5 mo</td><td><span class="pill pill-green">93%</span></td></tr>
+        <tr><td><strong>Citiswich Business Park</strong></td><td>14 months</td><td>16 months</td><td style="color:var(--amber);font-weight:700">−2.0 mo</td><td><span class="pill pill-green">88%</span></td></tr>
+        <tr><td><strong>Ripley Town Centre S3</strong></td><td>11 months</td><td>10 months</td><td style="color:var(--green);font-weight:700">+1.0 mo</td><td><span class="pill pill-green">91%</span></td></tr>
+        <tr style="background:var(--blue-light);font-weight:700"><td colspan="3"><strong>AVERAGE</strong></td><td colspan="2"><span class="pill pill-green">90% ACCURACY</span></td></tr>
+      </tbody>
+    </table></div>
   </div>
 
 </div>
@@ -1579,7 +1593,7 @@
 
   <div class="callout blue mb-20">
     <div class="callout-title"> Seasonal Factor Source</div>
-    <p>Seasonal adjustment factors are derived from Terralytics SEQ residential land transaction volumes (2021–2026, 5-year average). Spring (Sep–Nov) consistently shows 10–15% above-average transaction volume. December shows 25–30% below average due to holiday shutdown. January shows gradual recovery at 20–25% below peak.</p>
+    <p>Seasonal adjustment factors are derived from ProjX Research SEQ residential land transaction volumes (2021–2026, 5-year average). Spring (Sep–Nov) consistently shows 10–15% above-average transaction volume. December shows 25–30% below average due to holiday shutdown. January shows gradual recovery at 20–25% below peak.</p>
   </div>
 
   <!-- Cumulative chart -->
@@ -1773,7 +1787,7 @@
 
   <div class="page-header">
     <h2>Market Positioning</h2>
-    <p>Terralytics competitor data · Apr 2026 · South Ripley & Ipswich corridor</p>
+    <p>ProjX Research competitor data · Apr 2026 · South Ripley & Ipswich corridor</p>
   </div>
 
   <!-- Competitor table -->
